@@ -1,0 +1,13 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        res=""
+        nums=[1,4,5,9,10,40,50,90,100,400,500,900,1000]
+        sym=["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"]
+        i=12
+        while num!=0:
+            if nums[i]<=num:
+                res+=sym[i]
+                num=num-nums[i]
+            else:
+                i-=1
+        return res
